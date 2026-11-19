@@ -1,0 +1,7 @@
+<!doctype html><meta charset="utf-8"><title>relay</title>
+<script>
+(async()=>{const n=location.hash.slice(1);
+try{const b=await (await fetch('/social/'+n+'.jpg')).blob();
+window.opener.postMessage({name:n,blob:b},'https://www.instagram.com');document.title='sent '+n;}catch(e){document.title='err '+e}
+setTimeout(()=>window.close(),800);})();
+</script>
